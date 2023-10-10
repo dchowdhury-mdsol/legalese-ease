@@ -2,7 +2,6 @@
     TableName: "legalese-ease-sandbox",
     Item: {
         "ID":1,
-        "DateTime":"15-01-2023, 00:01:01",
         "QueryType":"Home Mortgage Loan",
         "Query": "Sample Query for Loan Agreement for homeowner",
         "QueryResponse": "Sample response"
