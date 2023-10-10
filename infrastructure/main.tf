@@ -27,34 +27,18 @@ resource "aws_dynamodb_table" "dynamodb" {
   billing_mode     = "PROVISIONED"
   read_capacity    = 10
   write_capacity   = 10
-  hash_key         = "QueryID"
-  range_key        = "QueryType"
+  hash_key         = "ID"
+  range_key        = "DateTime"
   stream_enabled   = true
   stream_view_type = "NEW_AND_OLD_IMAGES"
-  
-  global_secondary_index {
-    name            = "QueryIndex"
-    hash_key        = "Query"
-    projection_type = "ALL"  # You can choose the appropriate projection type
-    read_capacity   = 10
-    write_capacity  = 10
-  }
 
-  global_secondary_index {
-    name            = "QueryResponseIndex"
-    hash_key        = "QueryResponse"
-    projection_type = "ALL"  # You can choose the appropriate projection type
-    read_capacity   = 10
-    write_capacity  = 10
+  attribute {
+    name = "ID"
+    type = "N"
   }
 
   attribute {
-    name = "QueryID"
-    type = "S"
-  }
-
-  attribute {
-    name = "QueryType"
+    name = "DateTime"
     type = "S"
   }
 
@@ -64,8 +48,16 @@ resource "aws_dynamodb_table" "dynamodb" {
   }
 
   attribute {
-    name = "QueryResponse"
+    name = "QueryType"
     type = "S"
   }
-}
 
+  global_secondary_index {
+    name               = "QueryIndex"
+    hash_key           = "Query"
+    range_key          = "QueryType"
+    write_capacity     = 10
+    read_capacity      = 10
+    projection_type    = "ALL"
+  }
+}
