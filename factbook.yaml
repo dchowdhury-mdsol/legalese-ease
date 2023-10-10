@@ -45,5 +45,5 @@ metadata:
     - url:
       role: delivery
   annotations: # Anything extra
-    docs: https://github.com/dchowdhury-mdsol/legalese-ease/CONTRIBUTING.md
+    docs: https://github.com/dchowdhury-mdsol/legalese-ease/blob/main/CONTRIBUTING.md
     trello: https://trello.com/b/Qs4OEZZG/legalese-ease
