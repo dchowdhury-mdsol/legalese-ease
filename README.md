@@ -1,9 +1,9 @@
-# Legalease
+# LEGALEASE EASE
 
 This repository contains the source code and infrastructure needed for AI-driven assistance in understanding legal documentation and verbose text.
 
-# Contributing
+# CONTRIBUTING
 See [Contributing](Contributing.md)
 
-# Contact
+# CONTACT
 See [Factbook](factbook.yaml)
