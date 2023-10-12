@@ -1,0 +1,12 @@
+{
+    "TableName": "legalese-ease-sandbox",
+    "Item": {
+        "ID":1,
+        "QueryType":"Home Mortgage Loan",
+        "Query":"Sample Query for Loan Agreement for homeowner",
+        "QueryResponse":"ChatGPT Response",
+        "ResponseAccepted":true,
+        "ResponseAcceptanceTarget":"X%",
+        "AcceptedResponse":"Accepted Response"
+    }
+}
