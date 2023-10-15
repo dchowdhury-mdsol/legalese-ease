@@ -1,6 +1,6 @@
 import openai
 import argparse
-import logging
+from SetupLogger import setup_logging
 
 # REFERENCE: For understanding the purpose and usage of OpenAI API: 
 # https://beta.openai.com/docs/api-reference/introduction
@@ -46,25 +46,6 @@ class QUERYCOMPLETION:
         
         # Extracting and returning the model's message content from API response.
         return response.choices[0].message["content"]
-
-def setup_logging():
-    """
-    Configures and returns a logging object to output information with specified formatting.
-    
-    Returns:
-    logging.Logger: The configured logger object.
-    """
-    
-    # Basic configuration for logging: 
-    # - Level set to INFO to capture essential runtime information.
-    # - Formatting includes timestamp, log level, and message.
-    logging.basicConfig(level=logging.INFO, 
-                        format="%(asctime)s [%(levelname)s]: %(message)s",
-                        datefmt="%Y-%m-%d %H:%M:%S")
-    
-    # Retrieve and return logger instance
-    logger = logging.getLogger()
-    return logger
 
 if __name__ == "__main__":
     # Ensuring the script execution as main to avoid undesired code execution during import
