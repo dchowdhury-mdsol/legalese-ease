@@ -28,7 +28,7 @@ resource "aws_dynamodb_table" "dynamodb" {
   read_capacity    = 10
   write_capacity   = 10
   hash_key         = "ID"
-  range_key        = "DateTime"
+  range_key        = "QueryType"
   stream_enabled   = true
   stream_view_type = "NEW_AND_OLD_IMAGES"
 
@@ -38,7 +38,7 @@ resource "aws_dynamodb_table" "dynamodb" {
   }
 
   attribute {
-    name = "DateTime"
+    name = "QueryType"
     type = "S"
   }
 
@@ -48,14 +48,14 @@ resource "aws_dynamodb_table" "dynamodb" {
   }
 
   attribute {
-    name = "QueryType"
+    name = "Response"
     type = "S"
   }
 
   global_secondary_index {
     name               = "QueryIndex"
     hash_key           = "Query"
-    range_key          = "QueryType"
+    range_key          = "Response"
     write_capacity     = 10
     read_capacity      = 10
     projection_type    = "ALL"

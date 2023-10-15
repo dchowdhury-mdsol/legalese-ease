@@ -1,0 +1,11 @@
+version: '3'
+vars:
+  ENVIRONMENT: sandbox # [sandbox, performance, beta, production]
+tasks:
+  # USAGE: task dev:dependencies
+  dev:install-dependencies:
+    cmds:
+      - pip3 install openai
+      - pip3 install boto3
+      - pip3 install awscli
+      - pip3 install pandas
