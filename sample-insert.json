@@ -6,7 +6,7 @@
         "Query":"Sample Query for Loan Agreement for homeowner",
         "QueryResponse":"ChatGPT Response",
         "ResponseAccepted":true,
-        "ResponseAcceptanceTarget":"X%",
+        "ResponseAcceptanceTarget":0.93,
         "AcceptedResponse":"Accepted Response"
     }
 }
