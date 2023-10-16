@@ -51,6 +51,3 @@ RUN pip3 install -r requirements.txt
 
 # Copy all local files into the container
 COPY src/python/. .
-
-# Define the command to run your application
-CMD ["python", "app.py"]
