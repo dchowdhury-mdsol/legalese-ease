@@ -32,29 +32,29 @@ class TABLEUPLOAD():
         self.actual_response = self.completion if self.response_accepted else actual_response
         self.environment = environment
     
-    def __json_format(self) -> json:
+    def __json_format(self) -> dict:
         """
         Private method to format data as JSON.
 
         Returns:
-        - str: JSON-formatted data.
+        - dict: Dictionary with data.
         """
         # Create a dictionary with the required structure for DynamoDB
         data = {
             "TableName": f"legalese-ease-{self.environment}",
             "Item": {
                 "ID": {"N": str(self.id)},  # Assuming ID is a number attribute
-                "QueryType": {"S": self.query_type},
+                "QueryType": {"S": self.query_type if self.query_type else "None"},
                 "Query": {"S": self.query},
                 "QueryResponse": {"S": self.completion},
                 "ResponseAccepted": {"BOOL": self.response_accepted},
                 "ResponseAcceptanceTarget": {"N": str(self.acceptance_target)},
-                "AcceptedResponse": {"S": self.actual_response}
+                "AcceptedResponse": {"S": self.actual_response if self.actual_response else "None"}
             }
         }
         
-        # Convert the dictionary to a JSON string with indentation
-        return json.dumps(data, indent=4)
+        # No need to convert to JSON string
+        return data
     
     def upload_data(self) -> dict:
         """
@@ -64,9 +64,9 @@ class TABLEUPLOAD():
         - dict: Response from the DynamoDB PutItem operation.
         """
         # Create a Boto3 DynamoDB client
-        dynamodb = boto3.client('dynamodb')  # Reference: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
+        dynamodb = boto3.client('dynamodb')
         
-        # Format data as JSON
+        # Get the formatted data as a dictionary
         data = self.__json_format()
         
         # Use the PutItem operation to upload the data to the DynamoDB table
