@@ -19,13 +19,11 @@ metadata:
   people:
     - role: Architect
       name: daiyan.chowdhury
-    - role: Engineering Manager
-      name: ljupcho.atanasov
     - role: DevOps Engineer
       name: daiyan.chowdhury
-    - role:
+    - role: Scrum Master
       name: christopher.fani
-    - role: Software Engineer (Front-End)
+    - role: Software Engineer (UI)
       name: isabel.pozo
     - role: 
       name: umar.ali
