@@ -105,7 +105,7 @@ if __name__ == "__main__":
     )
 
     # Set up logging and obtain a logger instance
-    logger = setup_logging()  # Assuming you have a function 'setup_logging' for configuring logging
+    logger = setup_logging() 
 
     # Upload data to DynamoDB
     response = table_upload.upload_data()
