@@ -1,11 +1,42 @@
 version: '3'
 vars:
   ENVIRONMENT: sandbox # [sandbox, performance, beta, production]
+
 tasks:
-  # USAGE: task dev:dependencies
   dev:install-dependencies:
     cmds:
       - pip3 install openai
       - pip3 install boto3
       - pip3 install awscli
       - pip3 install pandas
+
+  run:docker:
+    desc: Run the Docker container locally
+    cmds:
+      - docker build -t legalease-app .
+      - docker run -p 8000:8000 legalease-app
+
+  run:tests:
+    desc: Run unit tests
+    cmds:
+      - python3 -m unittest discover -s src/tests
+
+  run:query-completion:
+    desc: Run the QUERYCOMPLETION Python script
+    cmds:
+      - python3 src/python/DataQueryGPT.py [API_KEY] [PROMPT]
+
+  run:lawyer-package:
+    desc: Run the LawyerPackage Python script
+    cmds:
+      - python3 src/python/LawyerPackage.py [username] [question] [ai_model] [approval_status] [--improved_response]
+
+  run:table-upload:
+    desc: Run the TABLEUPLOAD Python script
+    cmds:
+      - python3 src/python/TableUpload.py [ID] [QUERY] [COMPLETION] [RESPONSE_ACCEPTED] [ACCEPTANCE_TARGET] [QUERY_TYPE] [ACTUAL_RESPONSE] [ENVIRONMENT]
+
+  run:user-package:
+    desc: Run the UserPackage Python script
+    cmds:
+      - python3 src/python/UserPackage.py [username] [question] [ai_model]
