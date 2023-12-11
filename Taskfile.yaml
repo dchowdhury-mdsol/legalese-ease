@@ -13,7 +13,7 @@ tasks:
   run:docker:
     desc: Run the Docker container locally
     cmds:
-      - docker build -t legalease-app .
+      - docker build -t legalease-app -f src/docker/Dockerfile .
       - docker run -p 8000:8000 legalease-app
 
   run:tests:
