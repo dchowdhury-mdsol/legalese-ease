@@ -63,8 +63,6 @@ python3 src/python/UserPackage.py [username] [question] [ai_model]
 ```
 
 Ensure that the arguments you pass to each script match its expected input parameters.
-
-We appreciate your contributions to improving our project!
 ```
 
-This `CONTRIBUTING.md` file is structured to guide contributors through setting up their environment, running the Docker container, executing tests, and running specific Python scripts. Be sure to replace `path/to/` with the actual paths to your scripts.
+This `CONTRIBUTING.md` file is structured to guide contributors through setting up their environment, running the Docker container, executing tests, and running specific Python scripts.
