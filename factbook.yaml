@@ -19,20 +19,6 @@ metadata:
   people:
     - role: Architect
       name: daiyan.chowdhury
-    - role: DevOps Engineer
-      name: daiyan.chowdhury
-    - role: Scrum Master
-      name: christopher.fani
-    - role: Software Engineer (UI)
-      name: isabel.pozo
-    - role: 
-      name: umar.ali
-    - role:
-      name: ljupcho.atanasov
-    - role:
-      name: diego.almonte
-    - role:
-      name: jimmy.diaz
   channels: # list all channels where to find you
     - url: https://teams.microsoft.com/l/channel/19%3ac9e5b3e17cc9476aba2c4965c3a3e528%40thread.tacv2/Team%25202%2520-%2520Legalese%2520Ease?groupId=0ed8492a-a9de-4730-bd24-6f3347f0511e&tenantId=6f60f0b3-5f06-4e09-9715-989dba8cc7d8
       automated_messaging: false
@@ -43,5 +29,5 @@ metadata:
     - url:
       role: delivery
   annotations: # Anything extra
-    docs: https://github.com/dchowdhury-mdsol/legalese-ease/blob/main/CONTRIBUTING.md
+    docs: https://github.com/daiyanc/legalese-ease/blob/main/CONTRIBUTING.md
     trello: https://trello.com/b/Qs4OEZZG/legalese-ease
